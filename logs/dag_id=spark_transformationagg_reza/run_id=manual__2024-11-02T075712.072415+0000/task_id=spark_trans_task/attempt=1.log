@@ -1,0 +1,180 @@
+[2024-11-02T07:57:12.638+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_transformationagg_reza.spark_trans_task manual__2024-11-02T07:57:12.072415+00:00 [queued]>
+[2024-11-02T07:57:12.649+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_transformationagg_reza.spark_trans_task manual__2024-11-02T07:57:12.072415+00:00 [queued]>
+[2024-11-02T07:57:12.650+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-11-02T07:57:12.667+0000] {taskinstance.py:2214} INFO - Executing <Task(SparkSubmitOperator): spark_trans_task> on 2024-11-02 07:57:12.072415+00:00
+[2024-11-02T07:57:12.672+0000] {standard_task_runner.py:60} INFO - Started process 8641 to run task
+[2024-11-02T07:57:12.674+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'spark_transformationagg_reza', 'spark_trans_task', 'manual__2024-11-02T07:57:12.072415+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/spark-transformationagg-reza.py', '--cfg-path', '/tmp/tmp6c5u6k8c']
+[2024-11-02T07:57:12.677+0000] {standard_task_runner.py:88} INFO - Job 18: Subtask spark_trans_task
+[2024-11-02T07:57:12.699+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.9/site-packages/airflow/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-11-02T07:57:12.742+0000] {task_command.py:423} INFO - Running <TaskInstance: spark_transformationagg_reza.spark_trans_task manual__2024-11-02T07:57:12.072415+00:00 [running]> on host dataeng-airflow-scheduler
+[2024-11-02T07:57:12.817+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Reza' AIRFLOW_CTX_DAG_ID='spark_transformationagg_reza' AIRFLOW_CTX_TASK_ID='spark_trans_task' AIRFLOW_CTX_EXECUTION_DATE='2024-11-02T07:57:12.072415+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-02T07:57:12.072415+00:00'
+[2024-11-02T07:57:12.824+0000] {base.py:83} INFO - Using connection ID 'spark_main' for task execution.
+[2024-11-02T07:57:12.825+0000] {spark_submit.py:473} INFO - Spark-Submit cmd: spark-submit --master spark://dataeng-spark-master:7077 --jars /spark-scripts/jars/jars_postgresql-42.2.20.jar --name arrow-spark /spark-scripts/spark-transformationagg-reza.py
+[2024-11-02T07:57:14.246+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:14 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-11-02T07:57:15.009+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO SparkContext: Running Spark version 3.3.2
+[2024-11-02T07:57:15.032+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO ResourceUtils: ==============================================================
+[2024-11-02T07:57:15.033+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-11-02T07:57:15.033+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO ResourceUtils: ==============================================================
+[2024-11-02T07:57:15.034+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO SparkContext: Submitted application: Dibimbing
+[2024-11-02T07:57:15.051+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-11-02T07:57:15.059+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO ResourceProfile: Limiting resource is cpu
+[2024-11-02T07:57:15.060+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-11-02T07:57:15.096+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO SecurityManager: Changing view acls to: airflow
+[2024-11-02T07:57:15.097+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO SecurityManager: Changing modify acls to: airflow
+[2024-11-02T07:57:15.097+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO SecurityManager: Changing view acls groups to:
+[2024-11-02T07:57:15.098+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO SecurityManager: Changing modify acls groups to:
+[2024-11-02T07:57:15.098+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(airflow); groups with view permissions: Set(); users  with modify permissions: Set(airflow); groups with modify permissions: Set()
+[2024-11-02T07:57:15.286+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO Utils: Successfully started service 'sparkDriver' on port 33235.
+[2024-11-02T07:57:15.319+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO SparkEnv: Registering MapOutputTracker
+[2024-11-02T07:57:15.358+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO SparkEnv: Registering BlockManagerMaster
+[2024-11-02T07:57:15.378+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-11-02T07:57:15.379+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-11-02T07:57:15.385+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-11-02T07:57:15.419+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-675148cf-bc60-460a-84dd-51acd554ed3c
+[2024-11-02T07:57:15.437+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-11-02T07:57:15.455+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-11-02T07:57:15.704+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-11-02T07:57:15.749+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 ERROR SparkContext: Failed to add /opt/bitnami/spark/jars/postgresql-42.2.18.jar to Spark environment
+[2024-11-02T07:57:15.750+0000] {spark_submit.py:634} INFO - java.io.FileNotFoundException: Jar /opt/bitnami/spark/jars/postgresql-42.2.18.jar not found
+[2024-11-02T07:57:15.750+0000] {spark_submit.py:634} INFO - at org.apache.spark.SparkContext.addLocalJarFile$1(SparkContext.scala:1959)
+[2024-11-02T07:57:15.751+0000] {spark_submit.py:634} INFO - at org.apache.spark.SparkContext.addJar(SparkContext.scala:2014)
+[2024-11-02T07:57:15.751+0000] {spark_submit.py:634} INFO - at org.apache.spark.SparkContext.$anonfun$new$12(SparkContext.scala:507)
+[2024-11-02T07:57:15.752+0000] {spark_submit.py:634} INFO - at org.apache.spark.SparkContext.$anonfun$new$12$adapted(SparkContext.scala:507)
+[2024-11-02T07:57:15.752+0000] {spark_submit.py:634} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-11-02T07:57:15.753+0000] {spark_submit.py:634} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-11-02T07:57:15.753+0000] {spark_submit.py:634} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-11-02T07:57:15.754+0000] {spark_submit.py:634} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:507)
+[2024-11-02T07:57:15.755+0000] {spark_submit.py:634} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2024-11-02T07:57:15.755+0000] {spark_submit.py:634} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2024-11-02T07:57:15.756+0000] {spark_submit.py:634} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2024-11-02T07:57:15.756+0000] {spark_submit.py:634} INFO - at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2024-11-02T07:57:15.757+0000] {spark_submit.py:634} INFO - at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2024-11-02T07:57:15.757+0000] {spark_submit.py:634} INFO - at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2024-11-02T07:57:15.758+0000] {spark_submit.py:634} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2024-11-02T07:57:15.758+0000] {spark_submit.py:634} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2024-11-02T07:57:15.758+0000] {spark_submit.py:634} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2024-11-02T07:57:15.759+0000] {spark_submit.py:634} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2024-11-02T07:57:15.760+0000] {spark_submit.py:634} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2024-11-02T07:57:15.760+0000] {spark_submit.py:634} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2024-11-02T07:57:15.761+0000] {spark_submit.py:634} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2024-11-02T07:57:15.762+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-11-02T07:57:15.837+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://dibimbing-dataeng-spark-master:7077...
+[2024-11-02T07:57:15.881+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO TransportClientFactory: Successfully created connection to dibimbing-dataeng-spark-master/172.18.0.2:7077 after 24 ms (0 ms spent in bootstraps)
+[2024-11-02T07:57:15.951+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20241102075715-0013
+[2024-11-02T07:57:15.953+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20241102075715-0013/0 on worker-20241102054001-172.18.0.3-35871 (172.18.0.3:35871) with 1 core(s)
+[2024-11-02T07:57:15.955+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO StandaloneSchedulerBackend: Granted executor ID app-20241102075715-0013/0 on hostPort 172.18.0.3:35871 with 1 core(s), 1024.0 MiB RAM
+[2024-11-02T07:57:15.957+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37147.
+[2024-11-02T07:57:15.957+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO NettyBlockTransferService: Server created on dataeng-airflow-scheduler:37147
+[2024-11-02T07:57:15.958+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-11-02T07:57:15.962+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, dataeng-airflow-scheduler, 37147, None)
+[2024-11-02T07:57:15.965+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO BlockManagerMasterEndpoint: Registering block manager dataeng-airflow-scheduler:37147 with 434.4 MiB RAM, BlockManagerId(driver, dataeng-airflow-scheduler, 37147, None)
+[2024-11-02T07:57:15.966+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, dataeng-airflow-scheduler, 37147, None)
+[2024-11-02T07:57:15.968+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:15 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, dataeng-airflow-scheduler, 37147, None)
+[2024-11-02T07:57:16.008+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:16 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20241102075715-0013/0 is now RUNNING
+[2024-11-02T07:57:16.121+0000] {spark_submit.py:634} INFO - 24/11/02 07:57:16 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2024-11-02T07:57:20.457+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------------------+--------------------+--------------+
+[2024-11-02T07:57:20.457+0000] {spark_submit.py:634} INFO - |         customer_id|  customer_unique_id|customer_zip_code_prefix|       customer_city|customer_state|
+[2024-11-02T07:57:20.458+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------------------+--------------------+--------------+
+[2024-11-02T07:57:20.459+0000] {spark_submit.py:634} INFO - |06b8999e2fba1a1fb...|861eff4711a542e4b...|                   14409|              franca|            SP|
+[2024-11-02T07:57:20.459+0000] {spark_submit.py:634} INFO - |18955e83d337fd6b2...|290c77bc529b7ac93...|                    9790|sao bernardo do c...|            SP|
+[2024-11-02T07:57:20.460+0000] {spark_submit.py:634} INFO - |4e7b3e00288586ebd...|060e732b5b29e8181...|                    1151|           sao paulo|            SP|
+[2024-11-02T07:57:20.460+0000] {spark_submit.py:634} INFO - |b2b6027bc5c5109e5...|259dac757896d24d7...|                    8775|     mogi das cruzes|            SP|
+[2024-11-02T07:57:20.461+0000] {spark_submit.py:634} INFO - |4f2d8ab171c80ec83...|345ecd01c38d18a90...|                   13056|            campinas|            SP|
+[2024-11-02T07:57:20.462+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------------------+--------------------+--------------+
+[2024-11-02T07:57:20.462+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T07:57:20.462+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T07:57:21.224+0000] {spark_submit.py:634} INFO - +--------------------+-------------+--------------------+--------------------+-------------------+-----+-------------+
+[2024-11-02T07:57:21.225+0000] {spark_submit.py:634} INFO - |            order_id|order_item_id|          product_id|           seller_id|shipping_limit_date|price|freight_value|
+[2024-11-02T07:57:21.226+0000] {spark_submit.py:634} INFO - +--------------------+-------------+--------------------+--------------------+-------------------+-----+-------------+
+[2024-11-02T07:57:21.226+0000] {spark_submit.py:634} INFO - |00010242fe8c5a6d1...|            1|4244733e06e7ecb49...|48436dade18ac8b2b...|2017-09-19 09:45:35| 58.9|        13.29|
+[2024-11-02T07:57:21.227+0000] {spark_submit.py:634} INFO - |00018f77f2f0320c5...|            1|e5f2d52b802189ee6...|dd7ddc04e1b6c2c61...|2017-05-03 11:05:13|239.9|        19.93|
+[2024-11-02T07:57:21.227+0000] {spark_submit.py:634} INFO - |000229ec398224ef6...|            1|c777355d18b72b67a...|5b51032eddd242adc...|2018-01-18 14:48:30|199.0|        17.87|
+[2024-11-02T07:57:21.228+0000] {spark_submit.py:634} INFO - |00024acbcdf0a6daa...|            1|7634da152a4610f15...|9d7a1d34a50524090...|2018-08-15 10:10:18|12.99|        12.79|
+[2024-11-02T07:57:21.228+0000] {spark_submit.py:634} INFO - |00042b26cf59d7ce6...|            1|ac6c3623068f30de0...|df560393f3a51e745...|2017-02-13 13:57:51|199.9|        18.14|
+[2024-11-02T07:57:21.228+0000] {spark_submit.py:634} INFO - +--------------------+-------------+--------------------+--------------------+-------------------+-----+-------------+
+[2024-11-02T07:57:21.229+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T07:57:21.229+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T07:57:21.578+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------+------------------------+-------------------+----------------------------+-----------------------------+-----------------------------+
+[2024-11-02T07:57:21.579+0000] {spark_submit.py:634} INFO - |            order_id|         customer_id|order_status|order_purchase_timestamp|  order_approved_at|order_delivered_carrier_date|order_delivered_customer_date|order_estimated_delivery_date|
+[2024-11-02T07:57:21.580+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------+------------------------+-------------------+----------------------------+-----------------------------+-----------------------------+
+[2024-11-02T07:57:21.581+0000] {spark_submit.py:634} INFO - |e481f51cbdc54678b...|9ef432eb625129730...|   delivered|     2017-10-02 10:56:33|2017-10-02 11:07:15|         2017-10-04 19:55:00|          2017-10-10 21:25:13|          2017-10-18 00:00:00|
+[2024-11-02T07:57:21.581+0000] {spark_submit.py:634} INFO - |53cdb2fc8bc7dce0b...|b0830fb4747a6c6d2...|   delivered|     2018-07-24 20:41:37|2018-07-26 03:24:27|         2018-07-26 14:31:00|          2018-08-07 15:27:45|          2018-08-13 00:00:00|
+[2024-11-02T07:57:21.582+0000] {spark_submit.py:634} INFO - |47770eb9100c2d0c4...|41ce2a54c0b03bf34...|   delivered|     2018-08-08 08:38:49|2018-08-08 08:55:23|         2018-08-08 13:50:00|          2018-08-17 18:06:29|          2018-09-04 00:00:00|
+[2024-11-02T07:57:21.582+0000] {spark_submit.py:634} INFO - |949d5b44dbf5de918...|f88197465ea7920ad...|   delivered|     2017-11-18 19:28:06|2017-11-18 19:45:59|         2017-11-22 13:39:59|          2017-12-02 00:28:42|          2017-12-15 00:00:00|
+[2024-11-02T07:57:21.583+0000] {spark_submit.py:634} INFO - |ad21c59c0840e6cb8...|8ab97904e6daea886...|   delivered|     2018-02-13 21:18:39|2018-02-13 22:20:29|         2018-02-14 19:46:34|          2018-02-16 18:17:02|          2018-02-26 00:00:00|
+[2024-11-02T07:57:21.583+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------+------------------------+-------------------+----------------------------+-----------------------------+-----------------------------+
+[2024-11-02T07:57:21.584+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T07:57:21.584+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T07:57:21.719+0000] {spark_submit.py:634} INFO - +---------------------+-----------------------------+
+[2024-11-02T07:57:21.720+0000] {spark_submit.py:634} INFO - |product_category_name|product_category_name_english|
+[2024-11-02T07:57:21.720+0000] {spark_submit.py:634} INFO - +---------------------+-----------------------------+
+[2024-11-02T07:57:21.721+0000] {spark_submit.py:634} INFO - |         beleza_saude|                health_beauty|
+[2024-11-02T07:57:21.721+0000] {spark_submit.py:634} INFO - | informatica_acess...|         computers_accesso...|
+[2024-11-02T07:57:21.721+0000] {spark_submit.py:634} INFO - |           automotivo|                         auto|
+[2024-11-02T07:57:21.722+0000] {spark_submit.py:634} INFO - |      cama_mesa_banho|               bed_bath_table|
+[2024-11-02T07:57:21.722+0000] {spark_submit.py:634} INFO - |     moveis_decoracao|              furniture_decor|
+[2024-11-02T07:57:21.722+0000] {spark_submit.py:634} INFO - +---------------------+-----------------------------+
+[2024-11-02T07:57:21.722+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T07:57:21.723+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T07:57:21.946+0000] {spark_submit.py:634} INFO - +--------------------+---------------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+
+[2024-11-02T07:57:21.947+0000] {spark_submit.py:634} INFO - |          product_id|product_category_name|product_name_lenght|product_description_lenght|product_photos_qty|product_weight_g|product_length_cm|product_height_cm|product_width_cm|
+[2024-11-02T07:57:21.947+0000] {spark_submit.py:634} INFO - +--------------------+---------------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+
+[2024-11-02T07:57:21.948+0000] {spark_submit.py:634} INFO - |1e9e8ef04dbcff454...|           perfumaria|                 40|                       287|                 1|           225.0|             16.0|             10.0|            14.0|
+[2024-11-02T07:57:21.948+0000] {spark_submit.py:634} INFO - |3aa071139cb16b67c...|                artes|                 44|                       276|                 1|          1000.0|             30.0|             18.0|            20.0|
+[2024-11-02T07:57:21.949+0000] {spark_submit.py:634} INFO - |96bd76ec8810374ed...|        esporte_lazer|                 46|                       250|                 1|           154.0|             18.0|              9.0|            15.0|
+[2024-11-02T07:57:21.949+0000] {spark_submit.py:634} INFO - |cef67bcfe19066a93...|                bebes|                 27|                       261|                 1|           371.0|             26.0|              4.0|            26.0|
+[2024-11-02T07:57:21.950+0000] {spark_submit.py:634} INFO - |9dc1a7de274444849...| utilidades_domest...|                 37|                       402|                 4|           625.0|             20.0|             17.0|            13.0|
+[2024-11-02T07:57:21.950+0000] {spark_submit.py:634} INFO - +--------------------+---------------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+
+[2024-11-02T07:57:21.951+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T07:57:21.951+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T07:57:22.102+0000] {spark_submit.py:634} INFO - +--------------------+----------------------+-----------------+------------+
+[2024-11-02T07:57:22.103+0000] {spark_submit.py:634} INFO - |           seller_id|seller_zip_code_prefix|      seller_city|seller_state|
+[2024-11-02T07:57:22.103+0000] {spark_submit.py:634} INFO - +--------------------+----------------------+-----------------+------------+
+[2024-11-02T07:57:22.104+0000] {spark_submit.py:634} INFO - |3442f8959a84dea7e...|                 13023|         campinas|          SP|
+[2024-11-02T07:57:22.104+0000] {spark_submit.py:634} INFO - |d1b65fc7debc3361e...|                 13844|       mogi guacu|          SP|
+[2024-11-02T07:57:22.104+0000] {spark_submit.py:634} INFO - |ce3ad9de960102d06...|                 20031|   rio de janeiro|          RJ|
+[2024-11-02T07:57:22.104+0000] {spark_submit.py:634} INFO - |c0f3eea2e14555b6f...|                  4195|        sao paulo|          SP|
+[2024-11-02T07:57:22.105+0000] {spark_submit.py:634} INFO - |51a04a8a6bdcb23de...|                 12914|braganca paulista|          SP|
+[2024-11-02T07:57:22.105+0000] {spark_submit.py:634} INFO - +--------------------+----------------------+-----------------+------------+
+[2024-11-02T07:57:22.106+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T07:57:22.106+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T07:57:22.844+0000] {spark_submit.py:634} INFO - +---------+---------+--------------------+--------+-----------+---------+----------+--------------+
+[2024-11-02T07:57:22.845+0000] {spark_submit.py:634} INFO - |invoiceno|stockcode|         description|quantity|invoicedate|unitprice|customerid|       country|
+[2024-11-02T07:57:22.845+0000] {spark_submit.py:634} INFO - +---------+---------+--------------------+--------+-----------+---------+----------+--------------+
+[2024-11-02T07:57:22.846+0000] {spark_submit.py:634} INFO - |   536365|   85123A|WHITE HANGING HEA...|       6| 2010-12-01|     2.55|     17850|United Kingdom|
+[2024-11-02T07:57:22.846+0000] {spark_submit.py:634} INFO - |   536365|    71053| WHITE METAL LANTERN|       6| 2010-12-01|     3.39|     17850|United Kingdom|
+[2024-11-02T07:57:22.847+0000] {spark_submit.py:634} INFO - |   536365|   84406B|CREAM CUPID HEART...|       8| 2010-12-01|     2.75|     17850|United Kingdom|
+[2024-11-02T07:57:22.847+0000] {spark_submit.py:634} INFO - |   536365|   84029G|KNITTED UNION FLA...|       6| 2010-12-01|     3.39|     17850|United Kingdom|
+[2024-11-02T07:57:22.848+0000] {spark_submit.py:634} INFO - |   536365|   84029E|RED WOOLLY HOTTIE...|       6| 2010-12-01|     3.39|     17850|United Kingdom|
+[2024-11-02T07:57:22.848+0000] {spark_submit.py:634} INFO - +---------+---------+--------------------+--------+-----------+---------+----------+--------------+
+[2024-11-02T07:57:22.848+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T07:57:22.849+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T07:57:39.690+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+--------------------+-------------+-------------------+-----+-------------+---------------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+----------------------+-----------+------------+
+[2024-11-02T07:57:39.691+0000] {spark_submit.py:634} INFO - |           seller_id|          product_id|            order_id|order_item_id|shipping_limit_date|price|freight_value|product_category_name|product_name_lenght|product_description_lenght|product_photos_qty|product_weight_g|product_length_cm|product_height_cm|product_width_cm|seller_zip_code_prefix|seller_city|seller_state|
+[2024-11-02T07:57:39.692+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+--------------------+-------------+-------------------+-----+-------------+---------------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+----------------------+-----------+------------+
+[2024-11-02T07:57:39.692+0000] {spark_submit.py:634} INFO - |0015a82c2db000af6...|a2ff5a97bf95719e3...|7f39ba4c9052be115...|            1|2017-10-24 23:56:20|895.0|        21.02|      eletroportateis|                 40|                       849|                 2|         11800.0|             40.0|             43.0|            36.0|                  9080|santo andre|          SP|
+[2024-11-02T07:57:39.693+0000] {spark_submit.py:634} INFO - |0015a82c2db000af6...|a2ff5a97bf95719e3...|9dc8d1a6f16f1b898...|            1|2017-10-18 14:49:22|895.0|        21.02|      eletroportateis|                 40|                       849|                 2|         11800.0|             40.0|             43.0|            36.0|                  9080|santo andre|          SP|
+[2024-11-02T07:57:39.693+0000] {spark_submit.py:634} INFO - |0015a82c2db000af6...|a2ff5a97bf95719e3...|d455a8cb295653b55...|            1|2017-10-12 22:24:16|895.0|        21.02|      eletroportateis|                 40|                       849|                 2|         11800.0|             40.0|             43.0|            36.0|                  9080|santo andre|          SP|
+[2024-11-02T07:57:39.694+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|21fecd254a3103704...|44a3722417745e1a9...|            1|2017-11-16 22:30:21|119.0|         43.2|   ferramentas_jardim|                 38|                       499|                 1|          7400.0|             43.0|             14.0|            33.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.695+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|21fecd254a3103704...|5af2c148f1516ec3a...|            1|2017-11-02 23:26:33|119.0|         35.2|   ferramentas_jardim|                 38|                       499|                 1|          7400.0|             43.0|             14.0|            33.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.695+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|21fecd254a3103704...|d2aa63ac411996ad8...|            1|2017-05-01 23:45:18| 99.0|        36.24|   ferramentas_jardim|                 38|                       499|                 1|          7400.0|             43.0|             14.0|            33.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.696+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|4d7fee7877228c149...|51e3f832063f79a14...|            1|2017-11-29 22:13:27| 89.0|        36.93| construcao_ferram...|                 28|                       409|                 1|          8650.0|             44.0|             14.0|            40.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.696+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|4d7fee7877228c149...|8635ed3e0c954b79a...|            1|2017-11-20 17:08:34| 89.0|        32.09| construcao_ferram...|                 28|                       409|                 1|          8650.0|             44.0|             14.0|            40.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.697+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|4f3b83b83f7fb280f...|00dfb074b5c910fbd...|            1|2017-06-19 19:55:19| 99.5|        35.07|   ferramentas_jardim|                 32|                       706|                 2|          9050.0|             39.0|             12.0|            42.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.697+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|0240c9d87266e4cab...|            1|2018-06-18 09:18:02|129.0|        34.98|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.698+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|1ec0f6dd4813ff79c...|            1|2017-05-18 10:25:10|135.0|        40.28|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.698+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|40f5d5356396abbec...|            1|2018-01-05 21:06:39|129.0|         38.2|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.698+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|5190f963681eb5a3d...|            1|2017-07-17 10:50:16|112.0|        51.91|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.699+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|58faef88b9fbcce2d...|            1|2017-03-29 21:22:42| 99.5|        32.98|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.699+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|58faef88b9fbcce2d...|            2|2017-03-29 21:22:42| 99.5|        32.98|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.700+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|58faef88b9fbcce2d...|            3|2017-03-29 21:22:42| 99.5|        32.98|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.700+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|58faef88b9fbcce2d...|            4|2017-03-29 21:22:42| 99.5|        32.98|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.700+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|66eee0f0bae09aa30...|            1|2017-11-06 23:25:28|129.0|        33.29|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.701+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|6f6926816d7f45e2c...|            1|2017-05-25 02:43:17|135.0|        45.03|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.701+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|7d000307a29338a05...|            1|2017-09-13 12:05:44|129.0|        36.98|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T07:57:39.702+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+--------------------+-------------+-------------------+-----+-------------+---------------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+----------------------+-----------+------------+
+[2024-11-02T07:57:39.702+0000] {spark_submit.py:634} INFO - only showing top 20 rows
+[2024-11-02T07:57:39.703+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T07:57:39.859+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=spark_transformationagg_reza, task_id=spark_trans_task, execution_date=20241102T075712, start_date=20241102T075712, end_date=20241102T075739
+[2024-11-02T07:57:39.903+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-11-02T07:57:39.916+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check

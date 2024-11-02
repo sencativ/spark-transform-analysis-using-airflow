@@ -1,0 +1,633 @@
+[2024-11-02T09:37:01.563+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_transformationagg_reza.spark_trans_task manual__2024-11-02T09:37:00.516284+00:00 [queued]>
+[2024-11-02T09:37:01.573+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_transformationagg_reza.spark_trans_task manual__2024-11-02T09:37:00.516284+00:00 [queued]>
+[2024-11-02T09:37:01.573+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-11-02T09:37:01.588+0000] {taskinstance.py:2214} INFO - Executing <Task(SparkSubmitOperator): spark_trans_task> on 2024-11-02 09:37:00.516284+00:00
+[2024-11-02T09:37:01.593+0000] {standard_task_runner.py:60} INFO - Started process 21798 to run task
+[2024-11-02T09:37:01.595+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'spark_transformationagg_reza', 'spark_trans_task', 'manual__2024-11-02T09:37:00.516284+00:00', '--job-id', '34', '--raw', '--subdir', 'DAGS_FOLDER/spark-transformationagg-reza.py', '--cfg-path', '/tmp/tmpm6ic986h']
+[2024-11-02T09:37:01.597+0000] {standard_task_runner.py:88} INFO - Job 34: Subtask spark_trans_task
+[2024-11-02T09:37:01.614+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.9/site-packages/airflow/settings.py:194 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-11-02T09:37:01.649+0000] {task_command.py:423} INFO - Running <TaskInstance: spark_transformationagg_reza.spark_trans_task manual__2024-11-02T09:37:00.516284+00:00 [running]> on host dataeng-airflow-scheduler
+[2024-11-02T09:37:01.736+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Reza' AIRFLOW_CTX_DAG_ID='spark_transformationagg_reza' AIRFLOW_CTX_TASK_ID='spark_trans_task' AIRFLOW_CTX_EXECUTION_DATE='2024-11-02T09:37:00.516284+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-02T09:37:00.516284+00:00'
+[2024-11-02T09:37:01.746+0000] {base.py:83} INFO - Using connection ID 'spark_main' for task execution.
+[2024-11-02T09:37:01.748+0000] {spark_submit.py:473} INFO - Spark-Submit cmd: spark-submit --master spark://dataeng-spark-master:7077 --jars /spark-scripts/jars/jars_postgresql-42.2.20.jar --name arrow-spark /spark-scripts/spark-transformationagg-reza.py
+[2024-11-02T09:37:03.471+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:03 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-11-02T09:37:04.286+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO SparkContext: Running Spark version 3.3.2
+[2024-11-02T09:37:04.310+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO ResourceUtils: ==============================================================
+[2024-11-02T09:37:04.311+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-11-02T09:37:04.311+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO ResourceUtils: ==============================================================
+[2024-11-02T09:37:04.312+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO SparkContext: Submitted application: Dibimbing
+[2024-11-02T09:37:04.327+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-11-02T09:37:04.334+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO ResourceProfile: Limiting resource is cpu
+[2024-11-02T09:37:04.335+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-11-02T09:37:04.368+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO SecurityManager: Changing view acls to: airflow
+[2024-11-02T09:37:04.369+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO SecurityManager: Changing modify acls to: airflow
+[2024-11-02T09:37:04.370+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO SecurityManager: Changing view acls groups to:
+[2024-11-02T09:37:04.370+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO SecurityManager: Changing modify acls groups to:
+[2024-11-02T09:37:04.371+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(airflow); groups with view permissions: Set(); users  with modify permissions: Set(airflow); groups with modify permissions: Set()
+[2024-11-02T09:37:04.537+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO Utils: Successfully started service 'sparkDriver' on port 46719.
+[2024-11-02T09:37:04.558+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO SparkEnv: Registering MapOutputTracker
+[2024-11-02T09:37:04.587+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO SparkEnv: Registering BlockManagerMaster
+[2024-11-02T09:37:04.605+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-11-02T09:37:04.606+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-11-02T09:37:04.611+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-11-02T09:37:04.631+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-f2153fc6-84ec-4827-889e-6fd36d582332
+[2024-11-02T09:37:04.656+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-11-02T09:37:04.670+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-11-02T09:37:04.825+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-11-02T09:37:04.853+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 ERROR SparkContext: Failed to add /opt/bitnami/spark/jars/postgresql-42.2.18.jar to Spark environment
+[2024-11-02T09:37:04.854+0000] {spark_submit.py:634} INFO - java.io.FileNotFoundException: Jar /opt/bitnami/spark/jars/postgresql-42.2.18.jar not found
+[2024-11-02T09:37:04.854+0000] {spark_submit.py:634} INFO - at org.apache.spark.SparkContext.addLocalJarFile$1(SparkContext.scala:1959)
+[2024-11-02T09:37:04.855+0000] {spark_submit.py:634} INFO - at org.apache.spark.SparkContext.addJar(SparkContext.scala:2014)
+[2024-11-02T09:37:04.855+0000] {spark_submit.py:634} INFO - at org.apache.spark.SparkContext.$anonfun$new$12(SparkContext.scala:507)
+[2024-11-02T09:37:04.856+0000] {spark_submit.py:634} INFO - at org.apache.spark.SparkContext.$anonfun$new$12$adapted(SparkContext.scala:507)
+[2024-11-02T09:37:04.856+0000] {spark_submit.py:634} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-11-02T09:37:04.856+0000] {spark_submit.py:634} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-11-02T09:37:04.857+0000] {spark_submit.py:634} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-11-02T09:37:04.857+0000] {spark_submit.py:634} INFO - at org.apache.spark.SparkContext.<init>(SparkContext.scala:507)
+[2024-11-02T09:37:04.857+0000] {spark_submit.py:634} INFO - at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+[2024-11-02T09:37:04.858+0000] {spark_submit.py:634} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[2024-11-02T09:37:04.858+0000] {spark_submit.py:634} INFO - at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+[2024-11-02T09:37:04.859+0000] {spark_submit.py:634} INFO - at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[2024-11-02T09:37:04.859+0000] {spark_submit.py:634} INFO - at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+[2024-11-02T09:37:04.860+0000] {spark_submit.py:634} INFO - at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+[2024-11-02T09:37:04.860+0000] {spark_submit.py:634} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+[2024-11-02T09:37:04.860+0000] {spark_submit.py:634} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2024-11-02T09:37:04.861+0000] {spark_submit.py:634} INFO - at py4j.Gateway.invoke(Gateway.java:238)
+[2024-11-02T09:37:04.861+0000] {spark_submit.py:634} INFO - at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+[2024-11-02T09:37:04.862+0000] {spark_submit.py:634} INFO - at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+[2024-11-02T09:37:04.862+0000] {spark_submit.py:634} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2024-11-02T09:37:04.862+0000] {spark_submit.py:634} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2024-11-02T09:37:04.863+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-11-02T09:37:04.909+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://dibimbing-dataeng-spark-master:7077...
+[2024-11-02T09:37:04.945+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:04 INFO TransportClientFactory: Successfully created connection to dibimbing-dataeng-spark-master/172.18.0.2:7077 after 19 ms (0 ms spent in bootstraps)
+[2024-11-02T09:37:05.006+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:05 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20241102093704-0027
+[2024-11-02T09:37:05.009+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:05 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20241102093704-0027/0 on worker-20241102054001-172.18.0.3-35871 (172.18.0.3:35871) with 1 core(s)
+[2024-11-02T09:37:05.011+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:05 INFO StandaloneSchedulerBackend: Granted executor ID app-20241102093704-0027/0 on hostPort 172.18.0.3:35871 with 1 core(s), 1024.0 MiB RAM
+[2024-11-02T09:37:05.012+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:05 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 32805.
+[2024-11-02T09:37:05.013+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:05 INFO NettyBlockTransferService: Server created on dataeng-airflow-scheduler:32805
+[2024-11-02T09:37:05.015+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:05 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-11-02T09:37:05.019+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:05 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, dataeng-airflow-scheduler, 32805, None)
+[2024-11-02T09:37:05.022+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:05 INFO BlockManagerMasterEndpoint: Registering block manager dataeng-airflow-scheduler:32805 with 434.4 MiB RAM, BlockManagerId(driver, dataeng-airflow-scheduler, 32805, None)
+[2024-11-02T09:37:05.024+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:05 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, dataeng-airflow-scheduler, 32805, None)
+[2024-11-02T09:37:05.025+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:05 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, dataeng-airflow-scheduler, 32805, None)
+[2024-11-02T09:37:05.073+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:05 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20241102093704-0027/0 is now RUNNING
+[2024-11-02T09:37:05.219+0000] {spark_submit.py:634} INFO - 24/11/02 09:37:05 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2024-11-02T09:37:10.266+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------------------+--------------------+--------------+
+[2024-11-02T09:37:10.267+0000] {spark_submit.py:634} INFO - |         customer_id|  customer_unique_id|customer_zip_code_prefix|       customer_city|customer_state|
+[2024-11-02T09:37:10.268+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------------------+--------------------+--------------+
+[2024-11-02T09:37:10.268+0000] {spark_submit.py:634} INFO - |06b8999e2fba1a1fb...|861eff4711a542e4b...|                   14409|              franca|            SP|
+[2024-11-02T09:37:10.269+0000] {spark_submit.py:634} INFO - |18955e83d337fd6b2...|290c77bc529b7ac93...|                    9790|sao bernardo do c...|            SP|
+[2024-11-02T09:37:10.269+0000] {spark_submit.py:634} INFO - |4e7b3e00288586ebd...|060e732b5b29e8181...|                    1151|           sao paulo|            SP|
+[2024-11-02T09:37:10.270+0000] {spark_submit.py:634} INFO - |b2b6027bc5c5109e5...|259dac757896d24d7...|                    8775|     mogi das cruzes|            SP|
+[2024-11-02T09:37:10.270+0000] {spark_submit.py:634} INFO - |4f2d8ab171c80ec83...|345ecd01c38d18a90...|                   13056|            campinas|            SP|
+[2024-11-02T09:37:10.270+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------------------+--------------------+--------------+
+[2024-11-02T09:37:10.271+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T09:37:10.271+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:37:11.327+0000] {spark_submit.py:634} INFO - +--------------------+-------------+--------------------+--------------------+-------------------+-----+-------------+
+[2024-11-02T09:37:11.328+0000] {spark_submit.py:634} INFO - |            order_id|order_item_id|          product_id|           seller_id|shipping_limit_date|price|freight_value|
+[2024-11-02T09:37:11.329+0000] {spark_submit.py:634} INFO - +--------------------+-------------+--------------------+--------------------+-------------------+-----+-------------+
+[2024-11-02T09:37:11.329+0000] {spark_submit.py:634} INFO - |00010242fe8c5a6d1...|            1|4244733e06e7ecb49...|48436dade18ac8b2b...|2017-09-19 09:45:35| 58.9|        13.29|
+[2024-11-02T09:37:11.330+0000] {spark_submit.py:634} INFO - |00018f77f2f0320c5...|            1|e5f2d52b802189ee6...|dd7ddc04e1b6c2c61...|2017-05-03 11:05:13|239.9|        19.93|
+[2024-11-02T09:37:11.330+0000] {spark_submit.py:634} INFO - |000229ec398224ef6...|            1|c777355d18b72b67a...|5b51032eddd242adc...|2018-01-18 14:48:30|199.0|        17.87|
+[2024-11-02T09:37:11.330+0000] {spark_submit.py:634} INFO - |00024acbcdf0a6daa...|            1|7634da152a4610f15...|9d7a1d34a50524090...|2018-08-15 10:10:18|12.99|        12.79|
+[2024-11-02T09:37:11.331+0000] {spark_submit.py:634} INFO - |00042b26cf59d7ce6...|            1|ac6c3623068f30de0...|df560393f3a51e745...|2017-02-13 13:57:51|199.9|        18.14|
+[2024-11-02T09:37:11.331+0000] {spark_submit.py:634} INFO - +--------------------+-------------+--------------------+--------------------+-------------------+-----+-------------+
+[2024-11-02T09:37:11.332+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T09:37:11.332+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:37:11.735+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------+------------------------+-------------------+----------------------------+-----------------------------+-----------------------------+
+[2024-11-02T09:37:11.736+0000] {spark_submit.py:634} INFO - |            order_id|         customer_id|order_status|order_purchase_timestamp|  order_approved_at|order_delivered_carrier_date|order_delivered_customer_date|order_estimated_delivery_date|
+[2024-11-02T09:37:11.737+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------+------------------------+-------------------+----------------------------+-----------------------------+-----------------------------+
+[2024-11-02T09:37:11.737+0000] {spark_submit.py:634} INFO - |e481f51cbdc54678b...|9ef432eb625129730...|   delivered|     2017-10-02 10:56:33|2017-10-02 11:07:15|         2017-10-04 19:55:00|          2017-10-10 21:25:13|          2017-10-18 00:00:00|
+[2024-11-02T09:37:11.737+0000] {spark_submit.py:634} INFO - |53cdb2fc8bc7dce0b...|b0830fb4747a6c6d2...|   delivered|     2018-07-24 20:41:37|2018-07-26 03:24:27|         2018-07-26 14:31:00|          2018-08-07 15:27:45|          2018-08-13 00:00:00|
+[2024-11-02T09:37:11.738+0000] {spark_submit.py:634} INFO - |47770eb9100c2d0c4...|41ce2a54c0b03bf34...|   delivered|     2018-08-08 08:38:49|2018-08-08 08:55:23|         2018-08-08 13:50:00|          2018-08-17 18:06:29|          2018-09-04 00:00:00|
+[2024-11-02T09:37:11.738+0000] {spark_submit.py:634} INFO - |949d5b44dbf5de918...|f88197465ea7920ad...|   delivered|     2017-11-18 19:28:06|2017-11-18 19:45:59|         2017-11-22 13:39:59|          2017-12-02 00:28:42|          2017-12-15 00:00:00|
+[2024-11-02T09:37:11.739+0000] {spark_submit.py:634} INFO - |ad21c59c0840e6cb8...|8ab97904e6daea886...|   delivered|     2018-02-13 21:18:39|2018-02-13 22:20:29|         2018-02-14 19:46:34|          2018-02-16 18:17:02|          2018-02-26 00:00:00|
+[2024-11-02T09:37:11.739+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------+------------------------+-------------------+----------------------------+-----------------------------+-----------------------------+
+[2024-11-02T09:37:11.740+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T09:37:11.740+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:37:11.870+0000] {spark_submit.py:634} INFO - +---------------------+-----------------------------+
+[2024-11-02T09:37:11.871+0000] {spark_submit.py:634} INFO - |product_category_name|product_category_name_english|
+[2024-11-02T09:37:11.871+0000] {spark_submit.py:634} INFO - +---------------------+-----------------------------+
+[2024-11-02T09:37:11.871+0000] {spark_submit.py:634} INFO - |         beleza_saude|                health_beauty|
+[2024-11-02T09:37:11.872+0000] {spark_submit.py:634} INFO - | informatica_acess...|         computers_accesso...|
+[2024-11-02T09:37:11.872+0000] {spark_submit.py:634} INFO - |           automotivo|                         auto|
+[2024-11-02T09:37:11.872+0000] {spark_submit.py:634} INFO - |      cama_mesa_banho|               bed_bath_table|
+[2024-11-02T09:37:11.873+0000] {spark_submit.py:634} INFO - |     moveis_decoracao|              furniture_decor|
+[2024-11-02T09:37:11.873+0000] {spark_submit.py:634} INFO - +---------------------+-----------------------------+
+[2024-11-02T09:37:11.873+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T09:37:11.874+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:37:12.107+0000] {spark_submit.py:634} INFO - +--------------------+---------------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+
+[2024-11-02T09:37:12.108+0000] {spark_submit.py:634} INFO - |          product_id|product_category_name|product_name_lenght|product_description_lenght|product_photos_qty|product_weight_g|product_length_cm|product_height_cm|product_width_cm|
+[2024-11-02T09:37:12.108+0000] {spark_submit.py:634} INFO - +--------------------+---------------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+
+[2024-11-02T09:37:12.108+0000] {spark_submit.py:634} INFO - |1e9e8ef04dbcff454...|           perfumaria|                 40|                       287|                 1|           225.0|             16.0|             10.0|            14.0|
+[2024-11-02T09:37:12.109+0000] {spark_submit.py:634} INFO - |3aa071139cb16b67c...|                artes|                 44|                       276|                 1|          1000.0|             30.0|             18.0|            20.0|
+[2024-11-02T09:37:12.109+0000] {spark_submit.py:634} INFO - |96bd76ec8810374ed...|        esporte_lazer|                 46|                       250|                 1|           154.0|             18.0|              9.0|            15.0|
+[2024-11-02T09:37:12.110+0000] {spark_submit.py:634} INFO - |cef67bcfe19066a93...|                bebes|                 27|                       261|                 1|           371.0|             26.0|              4.0|            26.0|
+[2024-11-02T09:37:12.110+0000] {spark_submit.py:634} INFO - |9dc1a7de274444849...| utilidades_domest...|                 37|                       402|                 4|           625.0|             20.0|             17.0|            13.0|
+[2024-11-02T09:37:12.111+0000] {spark_submit.py:634} INFO - +--------------------+---------------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+
+[2024-11-02T09:37:12.111+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T09:37:12.112+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:37:12.266+0000] {spark_submit.py:634} INFO - +--------------------+----------------------+-----------------+------------+
+[2024-11-02T09:37:12.267+0000] {spark_submit.py:634} INFO - |           seller_id|seller_zip_code_prefix|      seller_city|seller_state|
+[2024-11-02T09:37:12.268+0000] {spark_submit.py:634} INFO - +--------------------+----------------------+-----------------+------------+
+[2024-11-02T09:37:12.268+0000] {spark_submit.py:634} INFO - |3442f8959a84dea7e...|                 13023|         campinas|          SP|
+[2024-11-02T09:37:12.269+0000] {spark_submit.py:634} INFO - |d1b65fc7debc3361e...|                 13844|       mogi guacu|          SP|
+[2024-11-02T09:37:12.269+0000] {spark_submit.py:634} INFO - |ce3ad9de960102d06...|                 20031|   rio de janeiro|          RJ|
+[2024-11-02T09:37:12.269+0000] {spark_submit.py:634} INFO - |c0f3eea2e14555b6f...|                  4195|        sao paulo|          SP|
+[2024-11-02T09:37:12.270+0000] {spark_submit.py:634} INFO - |51a04a8a6bdcb23de...|                 12914|braganca paulista|          SP|
+[2024-11-02T09:37:12.270+0000] {spark_submit.py:634} INFO - +--------------------+----------------------+-----------------+------------+
+[2024-11-02T09:37:12.271+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T09:37:12.271+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:37:13.093+0000] {spark_submit.py:634} INFO - +---------+---------+--------------------+--------+-----------+---------+----------+--------------+
+[2024-11-02T09:37:13.094+0000] {spark_submit.py:634} INFO - |invoiceno|stockcode|         description|quantity|invoicedate|unitprice|customerid|       country|
+[2024-11-02T09:37:13.094+0000] {spark_submit.py:634} INFO - +---------+---------+--------------------+--------+-----------+---------+----------+--------------+
+[2024-11-02T09:37:13.095+0000] {spark_submit.py:634} INFO - |   536365|   85123A|WHITE HANGING HEA...|       6| 2010-12-01|     2.55|     17850|United Kingdom|
+[2024-11-02T09:37:13.095+0000] {spark_submit.py:634} INFO - |   536365|    71053| WHITE METAL LANTERN|       6| 2010-12-01|     3.39|     17850|United Kingdom|
+[2024-11-02T09:37:13.096+0000] {spark_submit.py:634} INFO - |   536365|   84406B|CREAM CUPID HEART...|       8| 2010-12-01|     2.75|     17850|United Kingdom|
+[2024-11-02T09:37:13.096+0000] {spark_submit.py:634} INFO - |   536365|   84029G|KNITTED UNION FLA...|       6| 2010-12-01|     3.39|     17850|United Kingdom|
+[2024-11-02T09:37:13.097+0000] {spark_submit.py:634} INFO - |   536365|   84029E|RED WOOLLY HOTTIE...|       6| 2010-12-01|     3.39|     17850|United Kingdom|
+[2024-11-02T09:37:13.097+0000] {spark_submit.py:634} INFO - +---------+---------+--------------------+--------+-----------+---------+----------+--------------+
+[2024-11-02T09:37:13.097+0000] {spark_submit.py:634} INFO - only showing top 5 rows
+[2024-11-02T09:37:13.098+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:37:30.420+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+--------------------+-------------+-------------------+-----+-------------+---------------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+----------------------+-----------+------------+
+[2024-11-02T09:37:30.421+0000] {spark_submit.py:634} INFO - |           seller_id|          product_id|            order_id|order_item_id|shipping_limit_date|price|freight_value|product_category_name|product_name_lenght|product_description_lenght|product_photos_qty|product_weight_g|product_length_cm|product_height_cm|product_width_cm|seller_zip_code_prefix|seller_city|seller_state|
+[2024-11-02T09:37:30.422+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+--------------------+-------------+-------------------+-----+-------------+---------------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+----------------------+-----------+------------+
+[2024-11-02T09:37:30.422+0000] {spark_submit.py:634} INFO - |0015a82c2db000af6...|a2ff5a97bf95719e3...|7f39ba4c9052be115...|            1|2017-10-24 23:56:20|895.0|        21.02|      eletroportateis|                 40|                       849|                 2|         11800.0|             40.0|             43.0|            36.0|                  9080|santo andre|          SP|
+[2024-11-02T09:37:30.423+0000] {spark_submit.py:634} INFO - |0015a82c2db000af6...|a2ff5a97bf95719e3...|9dc8d1a6f16f1b898...|            1|2017-10-18 14:49:22|895.0|        21.02|      eletroportateis|                 40|                       849|                 2|         11800.0|             40.0|             43.0|            36.0|                  9080|santo andre|          SP|
+[2024-11-02T09:37:30.424+0000] {spark_submit.py:634} INFO - |0015a82c2db000af6...|a2ff5a97bf95719e3...|d455a8cb295653b55...|            1|2017-10-12 22:24:16|895.0|        21.02|      eletroportateis|                 40|                       849|                 2|         11800.0|             40.0|             43.0|            36.0|                  9080|santo andre|          SP|
+[2024-11-02T09:37:30.424+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|21fecd254a3103704...|44a3722417745e1a9...|            1|2017-11-16 22:30:21|119.0|         43.2|   ferramentas_jardim|                 38|                       499|                 1|          7400.0|             43.0|             14.0|            33.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.425+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|21fecd254a3103704...|5af2c148f1516ec3a...|            1|2017-11-02 23:26:33|119.0|         35.2|   ferramentas_jardim|                 38|                       499|                 1|          7400.0|             43.0|             14.0|            33.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.425+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|21fecd254a3103704...|d2aa63ac411996ad8...|            1|2017-05-01 23:45:18| 99.0|        36.24|   ferramentas_jardim|                 38|                       499|                 1|          7400.0|             43.0|             14.0|            33.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.426+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|4d7fee7877228c149...|51e3f832063f79a14...|            1|2017-11-29 22:13:27| 89.0|        36.93| construcao_ferram...|                 28|                       409|                 1|          8650.0|             44.0|             14.0|            40.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.426+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|4d7fee7877228c149...|8635ed3e0c954b79a...|            1|2017-11-20 17:08:34| 89.0|        32.09| construcao_ferram...|                 28|                       409|                 1|          8650.0|             44.0|             14.0|            40.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.427+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|4f3b83b83f7fb280f...|00dfb074b5c910fbd...|            1|2017-06-19 19:55:19| 99.5|        35.07|   ferramentas_jardim|                 32|                       706|                 2|          9050.0|             39.0|             12.0|            42.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.427+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|0240c9d87266e4cab...|            1|2018-06-18 09:18:02|129.0|        34.98|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.427+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|1ec0f6dd4813ff79c...|            1|2017-05-18 10:25:10|135.0|        40.28|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.428+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|40f5d5356396abbec...|            1|2018-01-05 21:06:39|129.0|         38.2|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.428+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|5190f963681eb5a3d...|            1|2017-07-17 10:50:16|112.0|        51.91|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.429+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|58faef88b9fbcce2d...|            1|2017-03-29 21:22:42| 99.5|        32.98|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.429+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|58faef88b9fbcce2d...|            2|2017-03-29 21:22:42| 99.5|        32.98|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.430+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|58faef88b9fbcce2d...|            3|2017-03-29 21:22:42| 99.5|        32.98|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.430+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|58faef88b9fbcce2d...|            4|2017-03-29 21:22:42| 99.5|        32.98|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.431+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|66eee0f0bae09aa30...|            1|2017-11-06 23:25:28|129.0|        33.29|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.431+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|6f6926816d7f45e2c...|            1|2017-05-25 02:43:17|135.0|        45.03|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.432+0000] {spark_submit.py:634} INFO - |001cca7ae9ae17fb1...|547b95702aec86f05...|7d000307a29338a05...|            1|2017-09-13 12:05:44|129.0|        36.98|   ferramentas_jardim|                 33|                       509|                 1|          9100.0|             42.0|             13.0|            39.0|                 29156|  cariacica|          ES|
+[2024-11-02T09:37:30.433+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+--------------------+-------------+-------------------+-----+-------------+---------------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+----------------------+-----------+------------+
+[2024-11-02T09:37:30.433+0000] {spark_submit.py:634} INFO - only showing top 20 rows
+[2024-11-02T09:37:30.434+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:37:42.668+0000] {spark_submit.py:634} INFO - +---------------------+--------------------+--------------------+-------------+--------------------+-------------------+-----+-------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+-----------------------------+
+[2024-11-02T09:37:42.670+0000] {spark_submit.py:634} INFO - |product_category_name|          product_id|            order_id|order_item_id|           seller_id|shipping_limit_date|price|freight_value|product_name_lenght|product_description_lenght|product_photos_qty|product_weight_g|product_length_cm|product_height_cm|product_width_cm|product_category_name_english|
+[2024-11-02T09:37:42.671+0000] {spark_submit.py:634} INFO - +---------------------+--------------------+--------------------+-------------+--------------------+-------------------+-----+-------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+-----------------------------+
+[2024-11-02T09:37:42.672+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|018ca97302e429305...|2f80a0b08926b808e...|            1|6481e96574816ead5...|2018-04-19 02:13:28| 88.0|        11.95|                 45|                       266|                 1|          2467.0|             28.0|             26.0|            24.0|         agro_industry_and...|
+[2024-11-02T09:37:42.672+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|026f43af35e795106...|ca00c2ba5781124bd...|            1|269cff2d3c8d205c1...|2018-08-14 18:25:13|179.9|        31.34|                 58|                      1075|                 1|         10317.0|             52.0|             33.0|            43.0|         agro_industry_and...|
+[2024-11-02T09:37:42.673+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|026f43af35e795106...|ca00c2ba5781124bd...|            2|269cff2d3c8d205c1...|2018-08-14 18:25:13|179.9|        31.34|                 58|                      1075|                 1|         10317.0|             52.0|             33.0|            43.0|         agro_industry_and...|
+[2024-11-02T09:37:42.674+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|0a0adf0de1769b297...|f4c75150bfe11df19...|            1|6481e96574816ead5...|2018-04-10 14:10:27| 58.5|        29.11|                 47|                       418|                 1|         13325.0|             41.0|             42.0|            47.0|         agro_industry_and...|
+[2024-11-02T09:37:42.675+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|0b2a1288e8ba64c79...|4856100f6860747b1...|            1|d17f467e4bf608a51...|2018-07-25 02:50:21| 67.7|        34.23|                 38|                       397|                 1|          3450.0|             33.0|             36.0|            33.0|         agro_industry_and...|
+[2024-11-02T09:37:42.676+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|0b2a1288e8ba64c79...|b02f2888891cd431e...|            1|06579cb253ecd5a3a...|2018-05-07 02:10:24| 96.9|         7.54|                 38|                       397|                 1|          3450.0|             33.0|             36.0|            33.0|         agro_industry_and...|
+[2024-11-02T09:37:42.677+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|10e33205ed375c8e4...|d4c9b64645181fa71...|            1|6481e96574816ead5...|2018-03-20 21:55:22|330.0|        61.15|                 59|                       436|                 2|          6650.0|             46.0|             76.0|            46.0|         agro_industry_and...|
+[2024-11-02T09:37:42.678+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|11250b0d4b709fee9...|08791ec24b12af5af...|            1|e59aa562b9f8076dd...|2018-04-24 15:31:47|412.0|        33.87|                 28|                       388|                 2|          3000.0|             30.0|             30.0|            20.0|         agro_industry_and...|
+[2024-11-02T09:37:42.679+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|11250b0d4b709fee9...|0d799dd97f4ffcecb...|            1|e59aa562b9f8076dd...|2018-04-12 13:48:00|412.0|         20.4|                 28|                       388|                 2|          3000.0|             30.0|             30.0|            20.0|         agro_industry_and...|
+[2024-11-02T09:37:42.680+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|11250b0d4b709fee9...|114c4a21b3e731dc6...|            1|e59aa562b9f8076dd...|2018-01-22 12:52:13|412.0|        30.26|                 28|                       388|                 2|          3000.0|             30.0|             30.0|            20.0|         agro_industry_and...|
+[2024-11-02T09:37:42.681+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|11250b0d4b709fee9...|203a651bc28694f33...|            1|e59aa562b9f8076dd...|2018-01-04 21:11:24|412.0|        30.26|                 28|                       388|                 2|          3000.0|             30.0|             30.0|            20.0|         agro_industry_and...|
+[2024-11-02T09:37:42.682+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|11250b0d4b709fee9...|41410b416c3844a17...|            1|e59aa562b9f8076dd...|2018-05-17 03:10:47|412.0|        25.42|                 28|                       388|                 2|          3000.0|             30.0|             30.0|            20.0|         agro_industry_and...|
+[2024-11-02T09:37:42.683+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|11250b0d4b709fee9...|41a002779a1684abe...|            1|e59aa562b9f8076dd...|2018-03-06 15:15:36|412.0|        26.26|                 28|                       388|                 2|          3000.0|             30.0|             30.0|            20.0|         agro_industry_and...|
+[2024-11-02T09:37:42.685+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|11250b0d4b709fee9...|45cbedcdca177029a...|            1|e59aa562b9f8076dd...|2018-07-20 04:31:26|420.0|        24.24|                 28|                       388|                 2|          3000.0|             30.0|             30.0|            20.0|         agro_industry_and...|
+[2024-11-02T09:37:42.686+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|11250b0d4b709fee9...|465c2e1bee4561cb3...|            1|e59aa562b9f8076dd...|2018-02-27 12:28:15|412.0|        27.72|                 28|                       388|                 2|          3000.0|             30.0|             30.0|            20.0|         agro_industry_and...|
+[2024-11-02T09:37:42.687+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|11250b0d4b709fee9...|465c2e1bee4561cb3...|            2|e59aa562b9f8076dd...|2018-02-27 12:28:15|412.0|        27.72|                 28|                       388|                 2|          3000.0|             30.0|             30.0|            20.0|         agro_industry_and...|
+[2024-11-02T09:37:42.687+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|11250b0d4b709fee9...|4e9ff1cf3de62fe0f...|            1|e59aa562b9f8076dd...|2017-12-11 04:11:58|412.0|        23.72|                 28|                       388|                 2|          3000.0|             30.0|             30.0|            20.0|         agro_industry_and...|
+[2024-11-02T09:37:42.688+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|11250b0d4b709fee9...|63ac25fa7a6efd7b9...|            1|e59aa562b9f8076dd...|2018-02-07 02:35:37|412.0|         20.5|                 28|                       388|                 2|          3000.0|             30.0|             30.0|            20.0|         agro_industry_and...|
+[2024-11-02T09:37:42.689+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|11250b0d4b709fee9...|63e9f378e99a3e837...|            1|e59aa562b9f8076dd...|2017-09-12 16:30:11|398.0|        20.04|                 28|                       388|                 2|          3000.0|             30.0|             30.0|            20.0|         agro_industry_and...|
+[2024-11-02T09:37:42.690+0000] {spark_submit.py:634} INFO - | agro_industria_e_...|11250b0d4b709fee9...|85d5dc0b4e21b624e...|            1|e59aa562b9f8076dd...|2018-02-08 17:50:33|412.0|        26.26|                 28|                       388|                 2|          3000.0|             30.0|             30.0|            20.0|         agro_industry_and...|
+[2024-11-02T09:37:42.691+0000] {spark_submit.py:634} INFO - +---------------------+--------------------+--------------------+-------------+--------------------+-------------------+-----+-------------+-------------------+--------------------------+------------------+----------------+-----------------+-----------------+----------------+-----------------------------+
+[2024-11-02T09:37:42.692+0000] {spark_submit.py:634} INFO - only showing top 20 rows
+[2024-11-02T09:37:42.692+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:37:49.955+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------+------------------------+-------------------+----------------------------+-----------------------------+-----------------------------+--------------------+------------------------+-------------------+--------------+
+[2024-11-02T09:37:49.957+0000] {spark_submit.py:634} INFO - |         customer_id|            order_id|order_status|order_purchase_timestamp|  order_approved_at|order_delivered_carrier_date|order_delivered_customer_date|order_estimated_delivery_date|  customer_unique_id|customer_zip_code_prefix|      customer_city|customer_state|
+[2024-11-02T09:37:49.957+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------+------------------------+-------------------+----------------------------+-----------------------------+-----------------------------+--------------------+------------------------+-------------------+--------------+
+[2024-11-02T09:37:49.958+0000] {spark_submit.py:634} INFO - |000161a058600d590...|a44895d095d7e0702...|   delivered|     2017-07-16 09:40:32|2017-07-16 09:55:12|         2017-07-19 19:09:37|          2017-07-25 18:57:33|          2017-08-04 00:00:00|b0015e09bb4b6e47c...|                   35550|        itapecerica|            MG|
+[2024-11-02T09:37:49.958+0000] {spark_submit.py:634} INFO - |00050bf6e01e69d5c...|fa906f338cee30a98...|   delivered|     2017-09-17 16:04:44|2017-09-17 16:15:13|         2017-09-18 21:02:46|          2017-10-02 21:14:31|          2017-10-13 00:00:00|e3cf594a99e810f58...|                   98700|               ijui|            RS|
+[2024-11-02T09:37:49.959+0000] {spark_submit.py:634} INFO - |000598caf2ef41174...|9b961b894e797f636...|   delivered|     2018-08-11 12:14:35|2018-08-11 12:25:08|         2018-08-13 14:41:00|          2018-08-20 18:18:41|          2018-09-06 00:00:00|7e0516b486e92ed3f...|                   35540|           oliveira|            MG|
+[2024-11-02T09:37:49.959+0000] {spark_submit.py:634} INFO - |0005aefbb696d34b3...|263ba12390d0fbce3...|   delivered|     2018-06-20 09:46:53|2018-06-20 10:21:32|         2018-06-21 15:17:00|          2018-06-22 17:58:39|          2018-07-03 00:00:00|616309b2eeb7bd9c0...|                    3052|          sao paulo|            SP|
+[2024-11-02T09:37:49.960+0000] {spark_submit.py:634} INFO - |0009a69b72033b2d0...|048beca6ccda094fb...|   delivered|     2017-04-28 13:36:30|2017-04-28 13:45:15|         2017-04-28 15:08:40|          2017-05-08 10:04:13|          2017-05-22 00:00:00|fa30145b07cad8e97...|                   13106|           campinas|            SP|
+[2024-11-02T09:37:49.960+0000] {spark_submit.py:634} INFO - |000bf8121c3412d30...|bc3e295306ee4d3eb...|   delivered|     2017-10-11 07:44:31|2017-10-11 07:56:17|         2017-10-13 15:16:26|          2017-10-16 19:35:33|          2017-10-24 00:00:00|1bc9b2dad6aefbfbc...|                   12335|            jacarei|            SP|
+[2024-11-02T09:37:49.961+0000] {spark_submit.py:634} INFO - |000e943451fc2788c...|cfde948cbe426f37a...|   delivered|     2017-04-20 19:37:14|2017-04-22 10:15:17|         2017-04-25 08:23:14|          2017-05-09 11:50:02|          2017-05-17 00:00:00|d73c3cf4a0922ece1...|                   99460|           colorado|            RS|
+[2024-11-02T09:37:49.961+0000] {spark_submit.py:634} INFO - |000fd45d6fedae68f...|574fb93317faefb9a...|   delivered|     2018-04-15 15:55:01|2018-04-17 05:55:38|         2018-04-23 23:44:37|          2018-04-30 20:31:39|          2018-05-08 00:00:00|cee6fa72fb403ef95...|                   12970|           piracaia|            SP|
+[2024-11-02T09:37:49.962+0000] {spark_submit.py:634} INFO - |00114026c1b7b52ab...|17a9050c446ea78f7...|   delivered|     2017-06-01 19:44:44|2017-06-01 19:55:15|         2017-06-02 13:55:54|          2017-06-12 15:43:57|          2017-06-27 00:00:00|f4dc0a81a11d3d270...|                   22470|     rio de janeiro|            RJ|
+[2024-11-02T09:37:49.962+0000] {spark_submit.py:634} INFO - |001226b2341ef6204...|8f90bd287474f07e9...|   delivered|     2017-09-29 01:15:08|2017-09-30 02:28:45|         2017-10-02 14:46:52|          2017-10-09 21:22:38|          2017-10-30 00:00:00|e7897290aea0805ab...|                   90470|       porto alegre|            RS|
+[2024-11-02T09:37:49.963+0000] {spark_submit.py:634} INFO - |0013280441d86a4f7...|e4606fed871d036cb...|   delivered|     2018-01-08 02:35:36|2018-01-08 02:47:54|         2018-01-09 15:44:22|          2018-01-10 18:20:12|          2018-01-24 00:00:00|06caeba6db23a17bf...|                    5409|          sao paulo|            SP|
+[2024-11-02T09:37:49.963+0000] {spark_submit.py:634} INFO - |0013cd8e350a7cc76...|4ed7a5d31f58c9c3b...|   delivered|     2018-05-07 23:25:09|2018-05-08 21:11:37|         2018-05-09 15:21:00|          2018-05-12 15:44:57|          2018-05-25 00:00:00|334fed5abcee3aa96...|                    3585|          sao paulo|            SP|
+[2024-11-02T09:37:49.963+0000] {spark_submit.py:634} INFO - |00146ad3045499387...|b60b122b336eaee33...|   delivered|     2018-01-08 20:40:57|2018-01-08 20:48:33|         2018-01-09 23:39:15|          2018-01-16 22:33:07|          2018-02-01 00:00:00|5616f75d22507069b...|                   31060|     belo horizonte|            MG|
+[2024-11-02T09:37:49.964+0000] {spark_submit.py:634} INFO - |00155f0530cc7b2bf...|9bd75a47121bac195...|   delivered|     2017-05-14 23:55:13|2017-05-15 00:46:01|         2017-05-19 09:55:44|          2017-05-29 10:48:45|          2017-06-14 00:00:00|533b3a42bf5005c30...|                   13042|           campinas|            SP|
+[2024-11-02T09:37:49.965+0000] {spark_submit.py:634} INFO - |001574cd5824c0b1e...|ccac33950ffc27cb9...| unavailable|     2017-11-26 02:13:57|2017-11-26 02:30:13|                        null|                         null|          2017-12-19 00:00:00|8141dd1e051afe7d7...|                    8248|          sao paulo|            SP|
+[2024-11-02T09:37:49.965+0000] {spark_submit.py:634} INFO - |0015bc9fd2d539544...|40e61df3e13139ca0...|   delivered|     2018-06-11 19:48:34|2018-06-11 20:22:45|         2018-06-12 16:36:00|          2018-06-14 10:18:20|          2018-06-26 00:00:00|490c854539b21598c...|                   12233|sao jose dos campos|            SP|
+[2024-11-02T09:37:49.966+0000] {spark_submit.py:634} INFO - |0015f7887e2fde13d...|cee9b5953fbfa5307...|   delivered|     2017-07-31 11:05:46|2017-07-31 11:24:56|         2017-08-01 18:56:51|          2017-08-08 20:53:03|          2017-08-24 00:00:00|866c923cde750dfc8...|                   25903|               mage|            RJ|
+[2024-11-02T09:37:49.966+0000] {spark_submit.py:634} INFO - |0017a0b4c1f1bdb9c...|5c11e238c0563cab5...|   delivered|     2018-03-03 18:44:01|2018-03-03 18:55:27|         2018-03-05 19:25:05|          2018-03-23 22:18:56|          2018-03-22 00:00:00|e36a621e869b643b1...|                   81510|           curitiba|            PR|
+[2024-11-02T09:37:49.967+0000] {spark_submit.py:634} INFO - |001a57041f5640091...|f22420a030f491fdc...|   delivered|     2018-01-17 21:22:51|2018-01-18 21:16:24|         2018-01-19 21:58:38|          2018-01-20 12:07:32|          2018-02-01 00:00:00|163b27a06a32c2fa5...|                    2512|          sao paulo|            SP|
+[2024-11-02T09:37:49.967+0000] {spark_submit.py:634} INFO - |001df1ee5c36767aa...|378d1ac3d8e22dd46...|   delivered|     2018-08-05 23:14:45|2018-08-05 23:30:13|         2018-08-07 11:21:00|          2018-08-10 18:52:44|          2018-08-10 00:00:00|46b44ab325f78e5bb...|                    1030|          sao paulo|            SP|
+[2024-11-02T09:37:49.968+0000] {spark_submit.py:634} INFO - +--------------------+--------------------+------------+------------------------+-------------------+----------------------------+-----------------------------+-----------------------------+--------------------+------------------------+-------------------+--------------+
+[2024-11-02T09:37:49.968+0000] {spark_submit.py:634} INFO - only showing top 20 rows
+[2024-11-02T09:37:49.969+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:38:05.127+0000] {spark_submit.py:634} INFO - 24/11/02 09:38:05 WARN TaskSetManager: Lost task 0.0 in stage 44.0 (TID 27) (172.18.0.3 executor 0): java.io.IOException: Mkdirs failed to create file:/data/hasiljoin_analisa_pertama.csv/_temporary/0/_temporary/attempt_202411020938046359081701102355654_0044_m_000000_27 (exists=false, cwd=file:/opt/bitnami/spark/work/app-20241102093704-0027/0)
+[2024-11-02T09:38:05.128+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:515)
+[2024-11-02T09:38:05.129+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:500)
+[2024-11-02T09:38:05.130+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1195)
+[2024-11-02T09:38:05.130+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1175)
+[2024-11-02T09:38:05.131+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1064)
+[2024-11-02T09:38:05.131+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStream(CodecStreams.scala:81)
+[2024-11-02T09:38:05.132+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStreamWriter(CodecStreams.scala:92)
+[2024-11-02T09:38:05.132+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CsvOutputWriter.<init>(CsvOutputWriter.scala:38)
+[2024-11-02T09:38:05.133+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anon$1.newInstance(CSVFileFormat.scala:84)
+[2024-11-02T09:38:05.134+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.newOutputWriter(FileFormatDataWriter.scala:161)
+[2024-11-02T09:38:05.135+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.<init>(FileFormatDataWriter.scala:146)
+[2024-11-02T09:38:05.135+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:327)
+[2024-11-02T09:38:05.136+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$write$22(FileFormatWriter.scala:266)
+[2024-11-02T09:38:05.136+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+[2024-11-02T09:38:05.137+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:136)
+[2024-11-02T09:38:05.137+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+[2024-11-02T09:38:05.138+0000] {spark_submit.py:634} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+[2024-11-02T09:38:05.139+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+[2024-11-02T09:38:05.140+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-11-02T09:38:05.140+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-11-02T09:38:05.141+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:833)
+[2024-11-02T09:38:05.141+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:38:05.539+0000] {spark_submit.py:634} INFO - 24/11/02 09:38:05 WARN TaskSetManager: Lost task 1.0 in stage 44.0 (TID 28) (172.18.0.3 executor 0): java.io.IOException: Mkdirs failed to create file:/data/hasiljoin_analisa_pertama.csv/_temporary/0/_temporary/attempt_202411020938046359081701102355654_0044_m_000001_28 (exists=false, cwd=file:/opt/bitnami/spark/work/app-20241102093704-0027/0)
+[2024-11-02T09:38:05.540+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:515)
+[2024-11-02T09:38:05.540+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:500)
+[2024-11-02T09:38:05.541+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1195)
+[2024-11-02T09:38:05.541+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1175)
+[2024-11-02T09:38:05.542+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1064)
+[2024-11-02T09:38:05.542+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStream(CodecStreams.scala:81)
+[2024-11-02T09:38:05.543+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStreamWriter(CodecStreams.scala:92)
+[2024-11-02T09:38:05.543+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CsvOutputWriter.<init>(CsvOutputWriter.scala:38)
+[2024-11-02T09:38:05.543+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anon$1.newInstance(CSVFileFormat.scala:84)
+[2024-11-02T09:38:05.544+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.newOutputWriter(FileFormatDataWriter.scala:161)
+[2024-11-02T09:38:05.544+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.<init>(FileFormatDataWriter.scala:146)
+[2024-11-02T09:38:05.545+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:327)
+[2024-11-02T09:38:05.545+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$write$22(FileFormatWriter.scala:266)
+[2024-11-02T09:38:05.546+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+[2024-11-02T09:38:05.546+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:136)
+[2024-11-02T09:38:05.547+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+[2024-11-02T09:38:05.547+0000] {spark_submit.py:634} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+[2024-11-02T09:38:05.547+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+[2024-11-02T09:38:05.548+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-11-02T09:38:05.548+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-11-02T09:38:05.548+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:833)
+[2024-11-02T09:38:05.549+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:38:05.613+0000] {spark_submit.py:634} INFO - 24/11/02 09:38:05 WARN TaskSetManager: Lost task 0.1 in stage 44.0 (TID 29) (172.18.0.3 executor 0): java.io.IOException: Mkdirs failed to create file:/data/hasiljoin_analisa_pertama.csv/_temporary/0/_temporary/attempt_202411020938046359081701102355654_0044_m_000000_29 (exists=false, cwd=file:/opt/bitnami/spark/work/app-20241102093704-0027/0)
+[2024-11-02T09:38:05.615+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:515)
+[2024-11-02T09:38:05.615+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:500)
+[2024-11-02T09:38:05.616+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1195)
+[2024-11-02T09:38:05.616+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1175)
+[2024-11-02T09:38:05.617+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1064)
+[2024-11-02T09:38:05.617+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStream(CodecStreams.scala:81)
+[2024-11-02T09:38:05.618+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStreamWriter(CodecStreams.scala:92)
+[2024-11-02T09:38:05.618+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CsvOutputWriter.<init>(CsvOutputWriter.scala:38)
+[2024-11-02T09:38:05.619+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anon$1.newInstance(CSVFileFormat.scala:84)
+[2024-11-02T09:38:05.619+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.newOutputWriter(FileFormatDataWriter.scala:161)
+[2024-11-02T09:38:05.619+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.<init>(FileFormatDataWriter.scala:146)
+[2024-11-02T09:38:05.620+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:327)
+[2024-11-02T09:38:05.620+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$write$22(FileFormatWriter.scala:266)
+[2024-11-02T09:38:05.621+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+[2024-11-02T09:38:05.621+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:136)
+[2024-11-02T09:38:05.621+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+[2024-11-02T09:38:05.622+0000] {spark_submit.py:634} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+[2024-11-02T09:38:05.622+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+[2024-11-02T09:38:05.622+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-11-02T09:38:05.623+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-11-02T09:38:05.623+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:833)
+[2024-11-02T09:38:05.624+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:38:05.954+0000] {spark_submit.py:634} INFO - 24/11/02 09:38:05 WARN TaskSetManager: Lost task 1.1 in stage 44.0 (TID 30) (172.18.0.3 executor 0): java.io.IOException: Mkdirs failed to create file:/data/hasiljoin_analisa_pertama.csv/_temporary/0/_temporary/attempt_202411020938046359081701102355654_0044_m_000001_30 (exists=false, cwd=file:/opt/bitnami/spark/work/app-20241102093704-0027/0)
+[2024-11-02T09:38:05.954+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:515)
+[2024-11-02T09:38:05.955+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:500)
+[2024-11-02T09:38:05.955+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1195)
+[2024-11-02T09:38:05.955+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1175)
+[2024-11-02T09:38:05.956+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1064)
+[2024-11-02T09:38:05.956+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStream(CodecStreams.scala:81)
+[2024-11-02T09:38:05.957+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStreamWriter(CodecStreams.scala:92)
+[2024-11-02T09:38:05.957+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CsvOutputWriter.<init>(CsvOutputWriter.scala:38)
+[2024-11-02T09:38:05.958+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anon$1.newInstance(CSVFileFormat.scala:84)
+[2024-11-02T09:38:05.958+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.newOutputWriter(FileFormatDataWriter.scala:161)
+[2024-11-02T09:38:05.959+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.<init>(FileFormatDataWriter.scala:146)
+[2024-11-02T09:38:05.959+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:327)
+[2024-11-02T09:38:05.960+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$write$22(FileFormatWriter.scala:266)
+[2024-11-02T09:38:05.960+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+[2024-11-02T09:38:05.960+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:136)
+[2024-11-02T09:38:05.961+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+[2024-11-02T09:38:05.961+0000] {spark_submit.py:634} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+[2024-11-02T09:38:05.961+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+[2024-11-02T09:38:05.962+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-11-02T09:38:05.962+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-11-02T09:38:05.962+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:833)
+[2024-11-02T09:38:05.963+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:38:06.009+0000] {spark_submit.py:634} INFO - 24/11/02 09:38:06 WARN TaskSetManager: Lost task 0.2 in stage 44.0 (TID 31) (172.18.0.3 executor 0): java.io.IOException: Mkdirs failed to create file:/data/hasiljoin_analisa_pertama.csv/_temporary/0/_temporary/attempt_202411020938046359081701102355654_0044_m_000000_31 (exists=false, cwd=file:/opt/bitnami/spark/work/app-20241102093704-0027/0)
+[2024-11-02T09:38:06.010+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:515)
+[2024-11-02T09:38:06.011+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:500)
+[2024-11-02T09:38:06.011+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1195)
+[2024-11-02T09:38:06.012+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1175)
+[2024-11-02T09:38:06.013+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1064)
+[2024-11-02T09:38:06.013+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStream(CodecStreams.scala:81)
+[2024-11-02T09:38:06.013+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStreamWriter(CodecStreams.scala:92)
+[2024-11-02T09:38:06.014+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CsvOutputWriter.<init>(CsvOutputWriter.scala:38)
+[2024-11-02T09:38:06.014+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anon$1.newInstance(CSVFileFormat.scala:84)
+[2024-11-02T09:38:06.015+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.newOutputWriter(FileFormatDataWriter.scala:161)
+[2024-11-02T09:38:06.015+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.<init>(FileFormatDataWriter.scala:146)
+[2024-11-02T09:38:06.015+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:327)
+[2024-11-02T09:38:06.016+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$write$22(FileFormatWriter.scala:266)
+[2024-11-02T09:38:06.016+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+[2024-11-02T09:38:06.017+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:136)
+[2024-11-02T09:38:06.017+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+[2024-11-02T09:38:06.017+0000] {spark_submit.py:634} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+[2024-11-02T09:38:06.018+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+[2024-11-02T09:38:06.018+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-11-02T09:38:06.019+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-11-02T09:38:06.019+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:833)
+[2024-11-02T09:38:06.019+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:38:06.333+0000] {spark_submit.py:634} INFO - 24/11/02 09:38:06 WARN TaskSetManager: Lost task 1.2 in stage 44.0 (TID 32) (172.18.0.3 executor 0): java.io.IOException: Mkdirs failed to create file:/data/hasiljoin_analisa_pertama.csv/_temporary/0/_temporary/attempt_202411020938046359081701102355654_0044_m_000001_32 (exists=false, cwd=file:/opt/bitnami/spark/work/app-20241102093704-0027/0)
+[2024-11-02T09:38:06.334+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:515)
+[2024-11-02T09:38:06.334+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:500)
+[2024-11-02T09:38:06.335+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1195)
+[2024-11-02T09:38:06.335+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1175)
+[2024-11-02T09:38:06.336+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1064)
+[2024-11-02T09:38:06.336+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStream(CodecStreams.scala:81)
+[2024-11-02T09:38:06.337+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStreamWriter(CodecStreams.scala:92)
+[2024-11-02T09:38:06.337+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CsvOutputWriter.<init>(CsvOutputWriter.scala:38)
+[2024-11-02T09:38:06.337+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anon$1.newInstance(CSVFileFormat.scala:84)
+[2024-11-02T09:38:06.338+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.newOutputWriter(FileFormatDataWriter.scala:161)
+[2024-11-02T09:38:06.338+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.<init>(FileFormatDataWriter.scala:146)
+[2024-11-02T09:38:06.338+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:327)
+[2024-11-02T09:38:06.339+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$write$22(FileFormatWriter.scala:266)
+[2024-11-02T09:38:06.339+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+[2024-11-02T09:38:06.340+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:136)
+[2024-11-02T09:38:06.340+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+[2024-11-02T09:38:06.341+0000] {spark_submit.py:634} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+[2024-11-02T09:38:06.341+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+[2024-11-02T09:38:06.341+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-11-02T09:38:06.342+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-11-02T09:38:06.342+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:833)
+[2024-11-02T09:38:06.342+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:38:06.387+0000] {spark_submit.py:634} INFO - 24/11/02 09:38:06 WARN TaskSetManager: Lost task 0.3 in stage 44.0 (TID 33) (172.18.0.3 executor 0): java.io.IOException: Mkdirs failed to create file:/data/hasiljoin_analisa_pertama.csv/_temporary/0/_temporary/attempt_202411020938046359081701102355654_0044_m_000000_33 (exists=false, cwd=file:/opt/bitnami/spark/work/app-20241102093704-0027/0)
+[2024-11-02T09:38:06.389+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:515)
+[2024-11-02T09:38:06.390+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:500)
+[2024-11-02T09:38:06.391+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1195)
+[2024-11-02T09:38:06.391+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1175)
+[2024-11-02T09:38:06.391+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1064)
+[2024-11-02T09:38:06.392+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStream(CodecStreams.scala:81)
+[2024-11-02T09:38:06.392+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStreamWriter(CodecStreams.scala:92)
+[2024-11-02T09:38:06.393+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CsvOutputWriter.<init>(CsvOutputWriter.scala:38)
+[2024-11-02T09:38:06.394+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anon$1.newInstance(CSVFileFormat.scala:84)
+[2024-11-02T09:38:06.397+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.newOutputWriter(FileFormatDataWriter.scala:161)
+[2024-11-02T09:38:06.397+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.<init>(FileFormatDataWriter.scala:146)
+[2024-11-02T09:38:06.398+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:327)
+[2024-11-02T09:38:06.399+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$write$22(FileFormatWriter.scala:266)
+[2024-11-02T09:38:06.399+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+[2024-11-02T09:38:06.400+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:136)
+[2024-11-02T09:38:06.400+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+[2024-11-02T09:38:06.401+0000] {spark_submit.py:634} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+[2024-11-02T09:38:06.401+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+[2024-11-02T09:38:06.402+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-11-02T09:38:06.402+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-11-02T09:38:06.403+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:833)
+[2024-11-02T09:38:06.403+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:38:06.403+0000] {spark_submit.py:634} INFO - 24/11/02 09:38:06 ERROR TaskSetManager: Task 0 in stage 44.0 failed 4 times; aborting job
+[2024-11-02T09:38:06.404+0000] {spark_submit.py:634} INFO - 24/11/02 09:38:06 ERROR FileFormatWriter: Aborting job b61376fc-c411-475e-90c7-a793b6c816e1.
+[2024-11-02T09:38:06.404+0000] {spark_submit.py:634} INFO - org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 44.0 failed 4 times, most recent failure: Lost task 0.3 in stage 44.0 (TID 33) (172.18.0.3 executor 0): java.io.IOException: Mkdirs failed to create file:/data/hasiljoin_analisa_pertama.csv/_temporary/0/_temporary/attempt_202411020938046359081701102355654_0044_m_000000_33 (exists=false, cwd=file:/opt/bitnami/spark/work/app-20241102093704-0027/0)
+[2024-11-02T09:38:06.405+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:515)
+[2024-11-02T09:38:06.405+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:500)
+[2024-11-02T09:38:06.405+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1195)
+[2024-11-02T09:38:06.406+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1175)
+[2024-11-02T09:38:06.406+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1064)
+[2024-11-02T09:38:06.407+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStream(CodecStreams.scala:81)
+[2024-11-02T09:38:06.407+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStreamWriter(CodecStreams.scala:92)
+[2024-11-02T09:38:06.407+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CsvOutputWriter.<init>(CsvOutputWriter.scala:38)
+[2024-11-02T09:38:06.408+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anon$1.newInstance(CSVFileFormat.scala:84)
+[2024-11-02T09:38:06.408+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.newOutputWriter(FileFormatDataWriter.scala:161)
+[2024-11-02T09:38:06.409+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.<init>(FileFormatDataWriter.scala:146)
+[2024-11-02T09:38:06.409+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:327)
+[2024-11-02T09:38:06.409+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$write$22(FileFormatWriter.scala:266)
+[2024-11-02T09:38:06.410+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+[2024-11-02T09:38:06.410+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:136)
+[2024-11-02T09:38:06.411+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+[2024-11-02T09:38:06.411+0000] {spark_submit.py:634} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+[2024-11-02T09:38:06.412+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+[2024-11-02T09:38:06.412+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-11-02T09:38:06.412+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-11-02T09:38:06.413+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:833)
+[2024-11-02T09:38:06.413+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:38:06.413+0000] {spark_submit.py:634} INFO - Driver stacktrace:
+[2024-11-02T09:38:06.414+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2672)
+[2024-11-02T09:38:06.414+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2608)
+[2024-11-02T09:38:06.414+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2607)
+[2024-11-02T09:38:06.415+0000] {spark_submit.py:634} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-11-02T09:38:06.415+0000] {spark_submit.py:634} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-11-02T09:38:06.415+0000] {spark_submit.py:634} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-11-02T09:38:06.416+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2607)
+[2024-11-02T09:38:06.416+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1182)
+[2024-11-02T09:38:06.416+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1182)
+[2024-11-02T09:38:06.417+0000] {spark_submit.py:634} INFO - at scala.Option.foreach(Option.scala:407)
+[2024-11-02T09:38:06.417+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1182)
+[2024-11-02T09:38:06.417+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2860)
+[2024-11-02T09:38:06.418+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2802)
+[2024-11-02T09:38:06.418+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2791)
+[2024-11-02T09:38:06.418+0000] {spark_submit.py:634} INFO - at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+[2024-11-02T09:38:06.419+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:952)
+[2024-11-02T09:38:06.419+0000] {spark_submit.py:634} INFO - at org.apache.spark.SparkContext.runJob(SparkContext.scala:2238)
+[2024-11-02T09:38:06.420+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:255)
+[2024-11-02T09:38:06.420+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:186)
+[2024-11-02T09:38:06.420+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+[2024-11-02T09:38:06.421+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+[2024-11-02T09:38:06.421+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+[2024-11-02T09:38:06.421+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:98)
+[2024-11-02T09:38:06.422+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:109)
+[2024-11-02T09:38:06.422+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:169)
+[2024-11-02T09:38:06.422+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:95)
+[2024-11-02T09:38:06.423+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:779)
+[2024-11-02T09:38:06.423+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:64)
+[2024-11-02T09:38:06.423+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+[2024-11-02T09:38:06.424+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:94)
+[2024-11-02T09:38:06.424+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:584)
+[2024-11-02T09:38:06.425+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:176)
+[2024-11-02T09:38:06.425+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:584)
+[2024-11-02T09:38:06.425+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:30)
+[2024-11-02T09:38:06.426+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+[2024-11-02T09:38:06.427+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+[2024-11-02T09:38:06.427+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+[2024-11-02T09:38:06.428+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+[2024-11-02T09:38:06.428+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:560)
+[2024-11-02T09:38:06.429+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:94)
+[2024-11-02T09:38:06.429+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:81)
+[2024-11-02T09:38:06.430+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:79)
+[2024-11-02T09:38:06.431+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:116)
+[2024-11-02T09:38:06.431+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:860)
+[2024-11-02T09:38:06.432+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:390)
+[2024-11-02T09:38:06.432+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:363)
+[2024-11-02T09:38:06.433+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:239)
+[2024-11-02T09:38:06.433+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.DataFrameWriter.csv(DataFrameWriter.scala:851)
+[2024-11-02T09:38:06.433+0000] {spark_submit.py:634} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2024-11-02T09:38:06.434+0000] {spark_submit.py:634} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2024-11-02T09:38:06.434+0000] {spark_submit.py:634} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2024-11-02T09:38:06.435+0000] {spark_submit.py:634} INFO - at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+[2024-11-02T09:38:06.435+0000] {spark_submit.py:634} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2024-11-02T09:38:06.436+0000] {spark_submit.py:634} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2024-11-02T09:38:06.436+0000] {spark_submit.py:634} INFO - at py4j.Gateway.invoke(Gateway.java:282)
+[2024-11-02T09:38:06.437+0000] {spark_submit.py:634} INFO - at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2024-11-02T09:38:06.437+0000] {spark_submit.py:634} INFO - at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2024-11-02T09:38:06.438+0000] {spark_submit.py:634} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2024-11-02T09:38:06.438+0000] {spark_submit.py:634} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2024-11-02T09:38:06.439+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-11-02T09:38:06.439+0000] {spark_submit.py:634} INFO - Caused by: java.io.IOException: Mkdirs failed to create file:/data/hasiljoin_analisa_pertama.csv/_temporary/0/_temporary/attempt_202411020938046359081701102355654_0044_m_000000_33 (exists=false, cwd=file:/opt/bitnami/spark/work/app-20241102093704-0027/0)
+[2024-11-02T09:38:06.440+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:515)
+[2024-11-02T09:38:06.440+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:500)
+[2024-11-02T09:38:06.441+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1195)
+[2024-11-02T09:38:06.441+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1175)
+[2024-11-02T09:38:06.442+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1064)
+[2024-11-02T09:38:06.442+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStream(CodecStreams.scala:81)
+[2024-11-02T09:38:06.443+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStreamWriter(CodecStreams.scala:92)
+[2024-11-02T09:38:06.443+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CsvOutputWriter.<init>(CsvOutputWriter.scala:38)
+[2024-11-02T09:38:06.444+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anon$1.newInstance(CSVFileFormat.scala:84)
+[2024-11-02T09:38:06.444+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.newOutputWriter(FileFormatDataWriter.scala:161)
+[2024-11-02T09:38:06.445+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.<init>(FileFormatDataWriter.scala:146)
+[2024-11-02T09:38:06.445+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:327)
+[2024-11-02T09:38:06.446+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$write$22(FileFormatWriter.scala:266)
+[2024-11-02T09:38:06.446+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+[2024-11-02T09:38:06.447+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:136)
+[2024-11-02T09:38:06.447+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+[2024-11-02T09:38:06.447+0000] {spark_submit.py:634} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+[2024-11-02T09:38:06.448+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+[2024-11-02T09:38:06.448+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-11-02T09:38:06.449+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-11-02T09:38:06.449+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:833)
+[2024-11-02T09:38:06.450+0000] {spark_submit.py:634} INFO - 24/11/02 09:38:06 WARN TaskSetManager: Lost task 1.3 in stage 44.0 (TID 34) (172.18.0.3 executor 0): TaskKilled (Stage cancelled)
+[2024-11-02T09:38:06.583+0000] {spark_submit.py:634} INFO - Traceback (most recent call last):
+[2024-11-02T09:38:06.584+0000] {spark_submit.py:634} INFO - File "/spark-scripts/spark-transformationagg-reza.py", line 113, in <module>
+[2024-11-02T09:38:06.593+0000] {spark_submit.py:634} INFO - df_analisa_pertama.write.mode("overwrite").csv(
+[2024-11-02T09:38:06.593+0000] {spark_submit.py:634} INFO - File "/home/airflow/.local/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 1240, in csv
+[2024-11-02T09:38:06.594+0000] {spark_submit.py:634} INFO - File "/home/airflow/.local/lib/python3.9/site-packages/pyspark/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1321, in __call__
+[2024-11-02T09:38:06.594+0000] {spark_submit.py:634} INFO - File "/home/airflow/.local/lib/python3.9/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 190, in deco
+[2024-11-02T09:38:06.595+0000] {spark_submit.py:634} INFO - File "/home/airflow/.local/lib/python3.9/site-packages/pyspark/python/lib/py4j-0.10.9.5-src.zip/py4j/protocol.py", line 326, in get_return_value
+[2024-11-02T09:38:06.639+0000] {spark_submit.py:634} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling o67.csv.
+[2024-11-02T09:38:06.639+0000] {spark_submit.py:634} INFO - : org.apache.spark.SparkException: Job aborted.
+[2024-11-02T09:38:06.640+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.errors.QueryExecutionErrors$.jobAbortedError(QueryExecutionErrors.scala:651)
+[2024-11-02T09:38:06.640+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:288)
+[2024-11-02T09:38:06.640+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:186)
+[2024-11-02T09:38:06.641+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+[2024-11-02T09:38:06.641+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+[2024-11-02T09:38:06.641+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+[2024-11-02T09:38:06.642+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:98)
+[2024-11-02T09:38:06.642+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:109)
+[2024-11-02T09:38:06.642+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:169)
+[2024-11-02T09:38:06.643+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:95)
+[2024-11-02T09:38:06.643+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:779)
+[2024-11-02T09:38:06.643+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:64)
+[2024-11-02T09:38:06.644+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+[2024-11-02T09:38:06.644+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:94)
+[2024-11-02T09:38:06.644+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:584)
+[2024-11-02T09:38:06.645+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:176)
+[2024-11-02T09:38:06.645+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:584)
+[2024-11-02T09:38:06.645+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:30)
+[2024-11-02T09:38:06.645+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+[2024-11-02T09:38:06.646+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+[2024-11-02T09:38:06.646+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+[2024-11-02T09:38:06.646+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:30)
+[2024-11-02T09:38:06.646+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:560)
+[2024-11-02T09:38:06.647+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:94)
+[2024-11-02T09:38:06.647+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:81)
+[2024-11-02T09:38:06.647+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:79)
+[2024-11-02T09:38:06.648+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:116)
+[2024-11-02T09:38:06.648+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:860)
+[2024-11-02T09:38:06.648+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:390)
+[2024-11-02T09:38:06.649+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:363)
+[2024-11-02T09:38:06.649+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:239)
+[2024-11-02T09:38:06.649+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.DataFrameWriter.csv(DataFrameWriter.scala:851)
+[2024-11-02T09:38:06.650+0000] {spark_submit.py:634} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2024-11-02T09:38:06.650+0000] {spark_submit.py:634} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2024-11-02T09:38:06.651+0000] {spark_submit.py:634} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2024-11-02T09:38:06.651+0000] {spark_submit.py:634} INFO - at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+[2024-11-02T09:38:06.651+0000] {spark_submit.py:634} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2024-11-02T09:38:06.652+0000] {spark_submit.py:634} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+[2024-11-02T09:38:06.652+0000] {spark_submit.py:634} INFO - at py4j.Gateway.invoke(Gateway.java:282)
+[2024-11-02T09:38:06.652+0000] {spark_submit.py:634} INFO - at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2024-11-02T09:38:06.652+0000] {spark_submit.py:634} INFO - at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2024-11-02T09:38:06.653+0000] {spark_submit.py:634} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2024-11-02T09:38:06.653+0000] {spark_submit.py:634} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2024-11-02T09:38:06.653+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:840)
+[2024-11-02T09:38:06.654+0000] {spark_submit.py:634} INFO - Caused by: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 44.0 failed 4 times, most recent failure: Lost task 0.3 in stage 44.0 (TID 33) (172.18.0.3 executor 0): java.io.IOException: Mkdirs failed to create file:/data/hasiljoin_analisa_pertama.csv/_temporary/0/_temporary/attempt_202411020938046359081701102355654_0044_m_000000_33 (exists=false, cwd=file:/opt/bitnami/spark/work/app-20241102093704-0027/0)
+[2024-11-02T09:38:06.654+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:515)
+[2024-11-02T09:38:06.654+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:500)
+[2024-11-02T09:38:06.654+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1195)
+[2024-11-02T09:38:06.655+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1175)
+[2024-11-02T09:38:06.655+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1064)
+[2024-11-02T09:38:06.655+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStream(CodecStreams.scala:81)
+[2024-11-02T09:38:06.656+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStreamWriter(CodecStreams.scala:92)
+[2024-11-02T09:38:06.656+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CsvOutputWriter.<init>(CsvOutputWriter.scala:38)
+[2024-11-02T09:38:06.656+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anon$1.newInstance(CSVFileFormat.scala:84)
+[2024-11-02T09:38:06.656+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.newOutputWriter(FileFormatDataWriter.scala:161)
+[2024-11-02T09:38:06.657+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.<init>(FileFormatDataWriter.scala:146)
+[2024-11-02T09:38:06.657+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:327)
+[2024-11-02T09:38:06.657+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$write$22(FileFormatWriter.scala:266)
+[2024-11-02T09:38:06.658+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+[2024-11-02T09:38:06.658+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:136)
+[2024-11-02T09:38:06.658+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+[2024-11-02T09:38:06.658+0000] {spark_submit.py:634} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+[2024-11-02T09:38:06.659+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+[2024-11-02T09:38:06.659+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-11-02T09:38:06.659+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-11-02T09:38:06.660+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:833)
+[2024-11-02T09:38:06.660+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:38:06.660+0000] {spark_submit.py:634} INFO - Driver stacktrace:
+[2024-11-02T09:38:06.660+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2672)
+[2024-11-02T09:38:06.661+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2608)
+[2024-11-02T09:38:06.661+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2607)
+[2024-11-02T09:38:06.661+0000] {spark_submit.py:634} INFO - at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+[2024-11-02T09:38:06.662+0000] {spark_submit.py:634} INFO - at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+[2024-11-02T09:38:06.662+0000] {spark_submit.py:634} INFO - at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+[2024-11-02T09:38:06.662+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2607)
+[2024-11-02T09:38:06.662+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1182)
+[2024-11-02T09:38:06.663+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1182)
+[2024-11-02T09:38:06.663+0000] {spark_submit.py:634} INFO - at scala.Option.foreach(Option.scala:407)
+[2024-11-02T09:38:06.663+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1182)
+[2024-11-02T09:38:06.663+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2860)
+[2024-11-02T09:38:06.664+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2802)
+[2024-11-02T09:38:06.664+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2791)
+[2024-11-02T09:38:06.664+0000] {spark_submit.py:634} INFO - at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+[2024-11-02T09:38:06.664+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:952)
+[2024-11-02T09:38:06.665+0000] {spark_submit.py:634} INFO - at org.apache.spark.SparkContext.runJob(SparkContext.scala:2238)
+[2024-11-02T09:38:06.665+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:255)
+[2024-11-02T09:38:06.665+0000] {spark_submit.py:634} INFO - ... 42 more
+[2024-11-02T09:38:06.666+0000] {spark_submit.py:634} INFO - Caused by: java.io.IOException: Mkdirs failed to create file:/data/hasiljoin_analisa_pertama.csv/_temporary/0/_temporary/attempt_202411020938046359081701102355654_0044_m_000000_33 (exists=false, cwd=file:/opt/bitnami/spark/work/app-20241102093704-0027/0)
+[2024-11-02T09:38:06.666+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:515)
+[2024-11-02T09:38:06.666+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:500)
+[2024-11-02T09:38:06.667+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1195)
+[2024-11-02T09:38:06.667+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1175)
+[2024-11-02T09:38:06.667+0000] {spark_submit.py:634} INFO - at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1064)
+[2024-11-02T09:38:06.668+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStream(CodecStreams.scala:81)
+[2024-11-02T09:38:06.668+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.CodecStreams$.createOutputStreamWriter(CodecStreams.scala:92)
+[2024-11-02T09:38:06.668+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CsvOutputWriter.<init>(CsvOutputWriter.scala:38)
+[2024-11-02T09:38:06.669+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.csv.CSVFileFormat$$anon$1.newInstance(CSVFileFormat.scala:84)
+[2024-11-02T09:38:06.669+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.newOutputWriter(FileFormatDataWriter.scala:161)
+[2024-11-02T09:38:06.669+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.SingleDirectoryDataWriter.<init>(FileFormatDataWriter.scala:146)
+[2024-11-02T09:38:06.669+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:327)
+[2024-11-02T09:38:06.670+0000] {spark_submit.py:634} INFO - at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$write$22(FileFormatWriter.scala:266)
+[2024-11-02T09:38:06.670+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:90)
+[2024-11-02T09:38:06.670+0000] {spark_submit.py:634} INFO - at org.apache.spark.scheduler.Task.run(Task.scala:136)
+[2024-11-02T09:38:06.671+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$3(Executor.scala:548)
+[2024-11-02T09:38:06.671+0000] {spark_submit.py:634} INFO - at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:1504)
+[2024-11-02T09:38:06.671+0000] {spark_submit.py:634} INFO - at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:551)
+[2024-11-02T09:38:06.671+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+[2024-11-02T09:38:06.672+0000] {spark_submit.py:634} INFO - at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+[2024-11-02T09:38:06.672+0000] {spark_submit.py:634} INFO - at java.base/java.lang.Thread.run(Thread.java:833)
+[2024-11-02T09:38:06.672+0000] {spark_submit.py:634} INFO - 
+[2024-11-02T09:38:06.795+0000] {taskinstance.py:2728} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 176, in execute
+    self._hook.submit(self.application)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 560, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://dataeng-spark-master:7077 --jars /spark-scripts/jars/jars_postgresql-42.2.20.jar --name arrow-spark /spark-scripts/spark-transformationagg-reza.py. Error code is: 1.
+[2024-11-02T09:38:06.798+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=spark_transformationagg_reza, task_id=spark_trans_task, execution_date=20241102T093700, start_date=20241102T093701, end_date=20241102T093806
+[2024-11-02T09:38:06.812+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 34 for task spark_trans_task (Cannot execute: spark-submit --master spark://dataeng-spark-master:7077 --jars /spark-scripts/jars/jars_postgresql-42.2.20.jar --name arrow-spark /spark-scripts/spark-transformationagg-reza.py. Error code is: 1.; 21798)
+[2024-11-02T09:38:06.841+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-11-02T09:38:06.853+0000] {taskinstance.py:3309} INFO - 0 downstream tasks scheduled from follow-on schedule check
